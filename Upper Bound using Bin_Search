@@ -1,0 +1,18 @@
+int upper_bound(vector<int>&v,int key)
+{
+    int m,l=0,h=v.size()-1;
+
+    while(h-l>1)
+    {
+        m = (l+h)/2;
+
+        if(v[m]<=key)l=m+1;
+        else 
+            h = m;
+    }
+
+    if(v[l]>key)return l;
+    if(v[h]>key)return h;
+    else
+        return h+1;
+}
