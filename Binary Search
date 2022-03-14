@@ -1,0 +1,20 @@
+int binary_search(vector<int>&v,int key)
+{
+    int l=0,h=v.size()-1;
+    int m;
+
+    while(h-l>1)
+    {
+        m = (l+h)/2;
+        
+        if(v[m]<key)l=m+1;
+        else
+            h = m;
+    }
+
+    if(v[l]==key)return l;
+    else if(v[h]==key)return h;
+    else
+        return -1;
+
+}
